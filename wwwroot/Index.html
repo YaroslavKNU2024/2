@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/Index.css">
+    <title>Genres</title>
+</head>
+<body>
+    <div class="main-content">
+        <h1>Список жанрів фільмів</h1>
+        <h3>Додати новий жанр</h3>
+        <form class="form1" action="javascript:void(0);" method="POST" onsubmit="addGenre()">
+            <input type="text" id="add-name" placeholder="Новий жанр">
+            <input type="submit" value="Додати">
+        </form>
+
+        <div id="editForm">
+            <h3>Редагувати жанр</h3>
+            <form class="form2" action="javascript:void(0);" onsubmit="updateGenre()">
+                <input type="hidden" id="edit-id">
+                <input type="text" id="edit-name" placeholder="Редагувати жанр">
+                <input type="submit" value="Зберегти">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+
+        <p id="counter"></p>
+
+        <table>
+            <tr>
+                <th>Жанр</th>
+            </tr>
+            <tbody id="genres"></tbody>
+        </table>
+        <script src="js/Genres.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            getGenres();
+        </script>
+    </div>
+</body>
+</html>
